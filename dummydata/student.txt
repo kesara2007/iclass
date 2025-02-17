@@ -1,0 +1,68 @@
+{
+"sid":"s001",
+"s_name":"Sanuthi",
+"s_address":"Kandana",
+"s_age":11,
+"s_dob":"12/05/2013",
+"s_school":"AMC",
+"parent_name":"Himali",
+"tp_no":"0773857751",
+"watsapp_no":"0773857751"
+}
+[
+  {
+    "sid": "s002",
+    "s_name": "Kavindu",
+    "s_address": "Colombo",
+    "s_age": 12,
+    "s_dob": "15/08/2012",
+    "s_school": "Royal College",
+    "parent_name": "Chathura",
+    "tp_no": "0774567890",
+    "watsapp_no": "0774567881"
+  },
+  {
+    "sid": "s003",
+    "s_name": "Sethmi",
+    "s_address": "Kandy",
+    "s_age": 10,
+    "s_dob": "22/11/2014",
+    "s_school": "Hillwood College",
+    "parent_name": "Nisansala",
+    "tp_no": "0775678912",
+    "watsapp_no": "0775678923"
+  },
+  {
+    "sid": "s004",
+    "s_name": "Tharindu",
+    "s_address": "Galle",
+    "s_age": 11,
+    "s_dob": "05/06/2013",
+    "s_school": "Richmond College",
+    "parent_name": "Sunil",
+    "tp_no": "0776789023",
+    "watsapp_no": "0776789034"
+  },
+  {
+    "sid": "s005",
+    "s_name": "Piumi",
+    "s_address": "Kurunegala",
+    "s_age": 12,
+    "s_dob": "30/03/2012",
+    "s_school": "Holy Family Convent",
+    "parent_name": "Shanika",
+    "tp_no": "0777890134",
+    "watsapp_no": "0777890145"
+  },
+  {
+    "sid": "s006",
+    "s_name": "Naveen",
+    "s_address": "Matara",
+    "s_age": 10,
+    "s_dob": "18/09/2014",
+    "s_school": "Rahula College",
+    "parent_name": "Kasun",
+    "tp_no": "0778901245",
+    "watsapp_no": "0778901256"
+  }
+]
