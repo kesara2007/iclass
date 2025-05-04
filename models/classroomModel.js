@@ -11,6 +11,10 @@ const classroomSchema= new mongoose.Schema({
         requierd:true,
 
     },
+    lec_name:{
+        type:String,
+        requierd:true
+    },
     no_of_students_allocated:{
         type:Number,
         requierd:true

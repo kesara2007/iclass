@@ -33,6 +33,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+    },
+    status: {
+        type: String,
+        required: true,
+        default: "Active"
     }
 })
 

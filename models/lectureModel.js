@@ -15,11 +15,19 @@ const lectureSchema= new mongoose.Schema({
         type:String,
         requierd:true
     },
+    lec_dob:{
+        type:Date,
+        requierd:true
+    },
     lec_qualification:{
         type:String,
         requierd:true
     },
     lec_tpNo:{
+        type:String,
+        requierd:true
+    },
+    lec_watsappNo:{
         type:String,
         requierd:true
     },

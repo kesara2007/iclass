@@ -11,6 +11,10 @@ const studentSchema= new mongoose.Schema({
         requierd:true,
 
     },
+    s_image:{
+        type:String,
+        default:"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+    },
     s_address:{
         type:String,
         requierd:true

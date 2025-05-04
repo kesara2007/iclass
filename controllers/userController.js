@@ -34,7 +34,12 @@ export function loginUser(req,res){
                     lastName:user.lastName,
                     phone:user.phone,
                     profilePicture:user.profilePicture
-                },process.env.JWT_SECRET)
+                },process.env.JWT_SECRET,{expiresIn:"1h"})
+                res.cookie("token",token,{
+                    httpOnly:true,
+                    secure:false,
+                    sameSite:"None",
+                    maxAge:1000*60*60})
                 res.json({msg:'User login succesful',token:token,user:user})
             }else{
                 res.status(404).json({error:"Login Failed"})
@@ -44,22 +49,21 @@ export function loginUser(req,res){
 }
 
 
-export function logoutUser(req,res){
-    const token=req.headers.authorization?.split("")[1];
+export function logoutUser(req,res){  
     
-    
-    if (!token){
-        res.status(400).json({msg:"No token found"})
-    }else{
-        
-        res.json({msg:"Logout succesfull"})
-    }
-    
+    res.clearCookie("token",{
+        httpOnly:true,
+        secure:false,
+        sameSite:"None"
+    })
+    res.json("Logout Successfull")
 }
+    
+
 
 export function isItAdmin(req){
     let isAdmin=false;
-    if(req.user!=null&&req.user.role=="admin"){
+    if(req.user!=null&&req.user.role=="Admin"){
         isAdmin=true;
     }
     return isAdmin

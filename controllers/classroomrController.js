@@ -1,14 +1,22 @@
 import Classroom from "../models/classroomModel.js";
 import { isItAdmin } from "./userController.js";
 
-export function addClassroom(req,res){
+export async function addClassroom(req,res){
 
     if(req.user==null||!isItAdmin(req)){
         res.status(401).json({msg:"You are not authorized"});
         return
     }
-
-    const data=req.body;
+    let lastCls=await Classroom.findOne().sort({classid:-1}).limit(1)
+    let classid=""
+    if(lastCls==null){
+        classid="CLS00001"
+    }else{
+       lastCls=lastCls[0].classid
+       classid="CLS"+(parseInt(lastCls.substring(3))+1).toString().padStart(5,"0")
+    }
+    const data=req.body; 
+    data.classid=classid  
     const newClassroom= new Classroom(data)
     newClassroom.save().then(()=>{
         res.json({msg:"New Classroom Added Successfully"})
