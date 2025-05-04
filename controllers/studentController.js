@@ -1,14 +1,23 @@
 import Student from "../models/studentModel.js";
 import { isItAdmin } from "./userController.js";
 
-export function addStudent(req,res){
+export async function addStudent(req,res){
 
     if(req.user==null||!isItAdmin(req)){
         res.status(401).json({msg:"You are not authorized"});
         return
     }
-
+    let lastStId=await Student.find().sort({sid:-1}).limit(1);
+    let sid=""
+    if (lastStId==null){
+        sid="STU00001"
+    }else{
+       lastStId=lastStId[0].sid
+       sid="STU"+(parseInt(lastStId.substring(3))+1).toString().padStart(5,"0")
+    }   
+    
     const data=req.body;
+    data.sid=sid
     const newStudent= new Student(data)
     newStudent.save().then(()=>{
         res.json({msg:"New Student Added Successfully"})

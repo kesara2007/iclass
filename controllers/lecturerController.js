@@ -7,6 +7,14 @@ export function addLecture(req,res){
         res.status(401).json({msg:"You are not authorized"});
         return
     }
+    let lastLecId= Lecturer.find().sort({lid:-1}).limit(1);
+    let lid=""
+    if (lastLecId==null){
+        lid="LEC00001"
+    }else{
+       lastLecId=lastLecId[0].lid
+       lid="LEC"+(parseInt(lastLecId.substring(3))+1).toString().padStart(5,"0")
+    }
 
     const data=req.body;
     const newLecturer= new Lecturer(data)
