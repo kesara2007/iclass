@@ -8,6 +8,7 @@ import studentRouter from "./routes/studentRouter.js";
 import lecturerRouter from "./routes/lectureRouter.js";
 import subjectRouter from "./routes/subjectRouter.js";
 import classroomRouter from "./routes/classroomRouter.js";
+import studentPaymentRouter from "./routes/studentPaymentRouter.js";
 
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
@@ -21,6 +22,7 @@ app.use(cors({
     credentials:true
 }));
 app.use(bodyParser.json());
+
 
 
 app.use('/api/users',userRouter);
@@ -53,7 +55,10 @@ app.use("/api/students",studentRouter)
 app.use("/api/lecturers",lecturerRouter)
 app.use("/api/subjects",subjectRouter)
 app.use("/api/classrooms",classroomRouter)
+app.use("/api/studentPayments", studentPaymentRouter);
+
 app.listen(5000, () => {
     console.log("Server is running on port 5000");
 });
 
+ 
