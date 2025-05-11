@@ -9,6 +9,7 @@ import lecturerRouter from "./routes/lectureRouter.js";
 import subjectRouter from "./routes/subjectRouter.js";
 import classroomRouter from "./routes/classroomRouter.js";
 import studentPaymentRouter from "./routes/studentPaymentRouter.js";
+import lecturerPaymentRouter from "./routes/lecturerPaymentRouter.js";
 
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
@@ -56,6 +57,7 @@ app.use("/api/lecturers",lecturerRouter)
 app.use("/api/subjects",subjectRouter)
 app.use("/api/classrooms",classroomRouter)
 app.use("/api/studentPayments", studentPaymentRouter);
+app.use("/api/lecturerPayments", lecturerPaymentRouter);
 
 app.listen(5000, () => {
     console.log("Server is running on port 5000");

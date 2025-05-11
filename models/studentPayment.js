@@ -23,6 +23,15 @@ const studentPaymentSchema= new mongoose.Schema({
     amount:{
         type:Number,
         required:true,
+    },
+    date: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    subid: {
+        type: String,
+        required: true,
     }
     
 })
