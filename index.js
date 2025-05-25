@@ -10,13 +10,16 @@ import subjectRouter from "./routes/subjectRouter.js";
 import classroomRouter from "./routes/classroomRouter.js";
 import studentPaymentRouter from "./routes/studentPaymentRouter.js";
 import lecturerPaymentRouter from "./routes/lecturerPaymentRouter.js";
+import schoolRouter from "./routes/schoolRouter.js";
+
+const app = express();
 
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 
 dotenv.config();
 
-const app = express();
+
 app.use(cookieParser());
 app.use(cors({
     origin:"http://localhost:5173",
@@ -58,6 +61,7 @@ app.use("/api/subjects",subjectRouter)
 app.use("/api/classrooms",classroomRouter)
 app.use("/api/studentPayments", studentPaymentRouter);
 app.use("/api/lecturerPayments", lecturerPaymentRouter);
+app.use("/api/schools", schoolRouter);
 
 app.listen(5000, () => {
     console.log("Server is running on port 5000");
