@@ -8,8 +8,9 @@ export async function addStudent(req,res){
         return
     }
     let lastStId=await Student.find().sort({sid:-1}).limit(1);
+       
     let sid=""
-    if (lastStId==null){
+    if (lastStId==""){
         sid="STU00001"
     }else{
        lastStId=lastStId[0].sid
@@ -22,7 +23,7 @@ export async function addStudent(req,res){
     newStudent.save().then(()=>{
         res.json({msg:"New Student Added Successfully"})
     }).catch((error)=>{
-        res.status(500).json({error:error})
+        res.status(500).json({msg:"Student addition failed",error:error})
     })
 
 

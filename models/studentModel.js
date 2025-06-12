@@ -42,6 +42,10 @@ const studentSchema= new mongoose.Schema({
     watsapp_no:{
         type:String,
         requierd:true
+    },
+    isActive:{
+        type:Boolean,
+        
     }
 
 
