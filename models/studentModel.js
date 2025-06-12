@@ -45,7 +45,7 @@ const studentSchema= new mongoose.Schema({
     },
     isActive:{
         type:Boolean,
-        default:true
+        
     }
 
 
